@@ -1,0 +1,63 @@
+---
+title: "Academatica Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(readr)
+library(dplyr)
+```
+
+
+```{r}
+stats<-read_csv("data/academatica_video_stats.csv")
+```
+
+```{r}
+metricas<-
+  stats %>% 
+  summarise(total_like = sum(likeCount))
+```
+
+
+# Metricas {data-icon=fa-ruler}
+
+## row1
+
+### Cantidad de Likes
+
+```{r}
+valueBox(formattable::comma(
+  metricas$total_like, digits = 0), icon="fa-thumbs-up",  color="success")
+```
+
+
+### col2
+
+### col3
+
+## row2
+
+### col1
+
+### col2
+
+## row3
+
+### col1
+
+# Data {data-icon=fa-database}
+
+## row1
+
+### col1
+
+### col2
+
+### col3
+
+
