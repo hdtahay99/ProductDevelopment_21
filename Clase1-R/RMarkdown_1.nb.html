@@ -402,8 +402,8 @@ LIMIT 10</code></pre>
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQoeClcbmBgYCJ9 -->
 <pre class="r"><code>print(x)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImZcIiBcImRcIiBcImhcIiBcImVcIiBcImRcIiBcImRcIiBcInNcIiBcImxcIiBcInFcIiBcImxcIlxuIn0= -->
-<pre><code> [1] &quot;f&quot; &quot;d&quot; &quot;h&quot; &quot;e&quot; &quot;d&quot; &quot;d&quot; &quot;s&quot; &quot;l&quot; &quot;q&quot; &quot;l&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImZcIiBcImhcIiBcImFcIiBcIndcIiBcImNcIiBcImxcIiBcInJcIiBcInVcIiBcInJcIiBcImdcIlxuIn0= -->
+<pre><code> [1] &quot;f&quot; &quot;h&quot; &quot;a&quot; &quot;w&quot; &quot;c&quot; &quot;l&quot; &quot;r&quot; &quot;u&quot; &quot;r&quot; &quot;g&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubnVtPC0gMSszXG5gYGAifQ== -->
 <pre class="r"><code>num&lt;- 1+3</code></pre>
@@ -458,146 +458,30 @@ print(x)</code></pre>
 <p>Instalando una libreria a un ambiente de conda <code>conda_install(&quot;r-reticulate&quot;, &quot;pandas&quot;)</code></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVpdFxuY29uZGFfaW5zdGFsbChcInItcmV0aWN1bGF0ZVwiLCBcInBhbmRhc1wiKVxuXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVpdFxuI2NvbmRhX2luc3RhbGwoXCJyLXJldGljdWxhdGVcIiwgXCJwYW5kYXNcIilcblxudXNlX2NvbmRhZW52KFwici1yZXRpY3VsYXRlXCIpXG5gYGAifQ== -->
 <pre class="r"><code>quit
-conda_install(&quot;r-reticulate&quot;, &quot;pandas&quot;)
-</code></pre>
+#conda_install(&quot;r-reticulate&quot;, &quot;pandas&quot;)
+
+use_condaenv(&quot;r-reticulate&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiQ29sbGVjdGluZyBwYWNrYWdlIG1ldGFkYXRhIChjdXJyZW50X3JlcG9kYXRhLmpzb24pOiAuLi53b3JraW5nLi4uIGRvbmVcblNvbHZpbmcgZW52aXJvbm1lbnQ6IC4uLndvcmtpbmcuLi4gZG9uZVxuXG4jIyBQYWNrYWdlIFBsYW4gIyNcblxuICBlbnZpcm9ubWVudCBsb2NhdGlvbjogQzpcXFVzZXJzXFxoZHRhaFxcQXBwRGF0YVxcTG9jYWxcXFItTUlOSX4xXFxlbnZzXFxyLXJldGljdWxhdGVcblxuICBhZGRlZCAvIHVwZGF0ZWQgc3BlY3M6XG4gICAgLSBwYW5kYXNcblxuXG5UaGUgZm9sbG93aW5nIHBhY2thZ2VzIHdpbGwgYmUgZG93bmxvYWRlZDpcblxuICAgIHBhY2thZ2UgICAgICAgICAgICAgICAgICAgIHwgICAgICAgICAgICBidWlsZFxuICAgIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLXwtLS0tLS0tLS0tLS0tLS0tLVxuICAgIHBhbmRhcy0wLjI1LjMgICAgICAgICAgICAgIHwgICBweTM2aGUzNTA5MTdfMCAgICAgICAgIDkuNiBNQiAgY29uZGEtZm9yZ2VcbiAgICBweXRob24tZGF0ZXV0aWwtMi44LjIgICAgICB8ICAgICBweWhkOGVkMWFiXzAgICAgICAgICAyNDAgS0IgIGNvbmRhLWZvcmdlXG4gICAgcHl0ei0yMDIxLjMgICAgICAgICAgICAgICAgfCAgICAgcHloZDhlZDFhYl8wICAgICAgICAgMjQyIEtCICBjb25kYS1mb3JnZVxuICAgIHNpeC0xLjE2LjAgICAgICAgICAgICAgICAgIHwgICAgIHB5aDZjNGEyMmZfMCAgICAgICAgICAxNCBLQiAgY29uZGEtZm9yZ2VcbiAgICAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBUb3RhbDogICAgICAgIDEwLjEgTUJcblxuVGhlIGZvbGxvd2luZyBORVcgcGFja2FnZXMgd2lsbCBiZSBJTlNUQUxMRUQ6XG5cbiAgcGFuZGFzICAgICAgICAgICAgIGNvbmRhLWZvcmdlL3dpbi02NDo6cGFuZGFzLTAuMjUuMy1weTM2aGUzNTA5MTdfMFxuICBweXRob24tZGF0ZXV0aWwgICAgY29uZGEtZm9yZ2Uvbm9hcmNoOjpweXRob24tZGF0ZXV0aWwtMi44LjItcHloZDhlZDFhYl8wXG4gIHB5dHogICAgICAgICAgICAgICBjb25kYS1mb3JnZS9ub2FyY2g6OnB5dHotMjAyMS4zLXB5aGQ4ZWQxYWJfMFxuICBzaXggICAgICAgICAgICAgICAgY29uZGEtZm9yZ2Uvbm9hcmNoOjpzaXgtMS4xNi4wLXB5aDZjNGEyMmZfMFxuXG5cblxuRG93bmxvYWRpbmcgYW5kIEV4dHJhY3RpbmcgUGFja2FnZXNcblxucHl0aG9uLWRhdGV1dGlsLTIuOC4gfCAyNDAgS0IgICAgfCAgICAgICAgICAgIHwgICAwJSBcbnB5dGhvbi1kYXRldXRpbC0yLjguIHwgMjQwIEtCICAgIHwgNiAgICAgICAgICB8ICAgNyUgXG5weXRob24tZGF0ZXV0aWwtMi44LiB8IDI0MCBLQiAgICB8ICMjIyM2ICAgICAgfCAgNDclIFxucHl0aG9uLWRhdGV1dGlsLTIuOC4gfCAyNDAgS0IgICAgfCAjIyMjIyMjIyMjIHwgMTAwJSBcbnB5dGhvbi1kYXRldXRpbC0yLjguIHwgMjQwIEtCICAgIHwgIyMjIyMjIyMjIyB8IDEwMCUgXG5cbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgICAgICAgICAgICB8ICAgMCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICAgICAgICAgICAgfCAgIDAlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAxICAgICAgICAgIHwgICAxJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgMiAgICAgICAgICB8ICAgMiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8IDIgICAgICAgICAgfCAgIDMlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCA1ICAgICAgICAgIHwgICA1JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgNiAgICAgICAgICB8ICAgNiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8IDggICAgICAgICAgfCAgIDglIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCA5ICAgICAgICAgIHwgIDEwJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyAgICAgICAgICB8ICAxMSUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMyICAgICAgICAgfCAgMTIlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjMyAgICAgICAgIHwgIDEzJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIzUgICAgICAgICB8ICAxNiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICM3ICAgICAgICAgfCAgMTclIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjOCAgICAgICAgIHwgIDE4JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIzkgICAgICAgICB8ICAyMCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjMSAgICAgICAgfCAgMjElIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIzIgICAgICAgIHwgIDIzJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyM0ICAgICAgICB8ICAyNCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjNSAgICAgICAgfCAgMjYlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIzYgICAgICAgIHwgIDI3JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyM4ICAgICAgICB8ICAyOCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjOSAgICAgICAgfCAgMjklIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMgICAgICAgIHwgIDMxJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjMiAgICAgICB8ICAzMiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIzMgICAgICAgfCAgMzQlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyM0ICAgICAgIHwgIDM1JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjNSAgICAgICB8ICAzNiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIzcgICAgICAgfCAgMzclIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyM4ICAgICAgIHwgIDM4JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyAgICAgICB8ICA0MCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMxICAgICAgfCAgNDElIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjMiAgICAgIHwgIDQyJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIzMgICAgICB8ICA0NCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyM1ICAgICAgfCAgNDYlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjNiAgICAgIHwgIDQ3JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIzggICAgICB8ICA0OCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyM5ICAgICAgfCAgNTAlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIzEgICAgIHwgIDUxJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMyICAgICB8ICA1MiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjMyAgICAgfCAgNTQlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIzQgICAgIHwgIDU1JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyM2ICAgICB8ICA1NiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjNyAgICAgfCAgNTglIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIzkgICAgIHwgIDYwJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjICAgICB8ICA2MSUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIzIgICAgfCAgNjIlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyMzICAgIHwgIDYzJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjNCAgICB8ICA2NSUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIzUgICAgfCAgNjYlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyM3ICAgIHwgIDY3JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjOCAgICB8ICA2OCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIyMgICAgfCAgNzAlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyMjMSAgIHwgIDcxJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjIzIgICB8ICA3MyUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIyM0ICAgfCAgNzUlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyMjNiAgIHwgIDc2JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjIzcgICB8ICA3OCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIyM4ICAgfCAgNzklIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyMjIyAgIHwgIDgxJSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjIyMxICB8ICA4MiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIyMjMyAgfCAgODMlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyMjIzQgIHwgIDg1JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjIyM1ICB8ICA4NiUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIyMjNyAgfCAgODclIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyMjIzggIHwgIDg5JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjIyM5ICB8ICA5MCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIyMjIzIgfCAgOTIlIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyMjIyMzIHwgIDk0JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjIyMjNSB8ICA5NSUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIyMjIzYgfCAgOTclIFxucGFuZGFzLTAuMjUuMyAgICAgICAgfCA5LjYgTUIgICAgfCAjIyMjIyMjIyM4IHwgIDk4JSBcbnBhbmRhcy0wLjI1LjMgICAgICAgIHwgOS42IE1CICAgIHwgIyMjIyMjIyMjOSB8IDEwMCUgXG5wYW5kYXMtMC4yNS4zICAgICAgICB8IDkuNiBNQiAgICB8ICMjIyMjIyMjIyMgfCAxMDAlIFxuXG5weXR6LTIwMjEuMyAgICAgICAgICB8IDI0MiBLQiAgICB8ICAgICAgICAgICAgfCAgIDAlIFxucHl0ei0yMDIxLjMgICAgICAgICAgfCAyNDIgS0IgICAgfCA2ICAgICAgICAgIHwgICA3JSBcbnB5dHotMjAyMS4zICAgICAgICAgIHwgMjQyIEtCICAgIHwgIyMjIyMyICAgICB8ICA1MyUgXG5weXR6LTIwMjEuMyAgICAgICAgICB8IDI0MiBLQiAgICB8ICMjIyMjIyMjNSAgfCAgODYlIFxucHl0ei0yMDIxLjMgICAgICAgICAgfCAyNDIgS0IgICAgfCAjIyMjIyMjIyMjIHwgMTAwJSBcblxuc2l4LTEuMTYuMCAgICAgICAgICAgfCAxNCBLQiAgICAgfCAgICAgICAgICAgIHwgICAwJSBcbnNpeC0xLjE2LjAgICAgICAgICAgIHwgMTQgS0IgICAgIHwgIyMjIyMjIyMjIyB8IDEwMCUgXG5zaXgtMS4xNi4wICAgICAgICAgICB8IDE0IEtCICAgICB8ICMjIyMjIyMjIyMgfCAxMDAlIFxuUHJlcGFyaW5nIHRyYW5zYWN0aW9uOiAuLi53b3JraW5nLi4uIGRvbmVcblZlcmlmeWluZyB0cmFuc2FjdGlvbjogLi4ud29ya2luZy4uLiBkb25lXG5FeGVjdXRpbmcgdHJhbnNhY3Rpb246IC4uLndvcmtpbmcuLi4gZG9uZVxuIn0= -->
-<pre><code>Collecting package metadata (current_repodata.json): ...working... done
-Solving environment: ...working... done
-
-## Package Plan ##
-
-  environment location: C:\Users\hdtah\AppData\Local\R-MINI~1\envs\r-reticulate
-
-  added / updated specs:
-    - pandas
-
-
-The following packages will be downloaded:
-
-    package                    |            build
-    ---------------------------|-----------------
-    pandas-0.25.3              |   py36he350917_0         9.6 MB  conda-forge
-    python-dateutil-2.8.2      |     pyhd8ed1ab_0         240 KB  conda-forge
-    pytz-2021.3                |     pyhd8ed1ab_0         242 KB  conda-forge
-    six-1.16.0                 |     pyh6c4a22f_0          14 KB  conda-forge
-    ------------------------------------------------------------
-                                           Total:        10.1 MB
-
-The following NEW packages will be INSTALLED:
-
-  pandas             conda-forge/win-64::pandas-0.25.3-py36he350917_0
-  python-dateutil    conda-forge/noarch::python-dateutil-2.8.2-pyhd8ed1ab_0
-  pytz               conda-forge/noarch::pytz-2021.3-pyhd8ed1ab_0
-  six                conda-forge/noarch::six-1.16.0-pyh6c4a22f_0
-
-
-
-Downloading and Extracting Packages
-
-python-dateutil-2.8. | 240 KB    |            |   0% 
-python-dateutil-2.8. | 240 KB    | 6          |   7% 
-python-dateutil-2.8. | 240 KB    | ####6      |  47% 
-python-dateutil-2.8. | 240 KB    | ########## | 100% 
-python-dateutil-2.8. | 240 KB    | ########## | 100% 
-
-pandas-0.25.3        | 9.6 MB    |            |   0% 
-pandas-0.25.3        | 9.6 MB    |            |   0% 
-pandas-0.25.3        | 9.6 MB    | 1          |   1% 
-pandas-0.25.3        | 9.6 MB    | 2          |   2% 
-pandas-0.25.3        | 9.6 MB    | 2          |   3% 
-pandas-0.25.3        | 9.6 MB    | 5          |   5% 
-pandas-0.25.3        | 9.6 MB    | 6          |   6% 
-pandas-0.25.3        | 9.6 MB    | 8          |   8% 
-pandas-0.25.3        | 9.6 MB    | 9          |  10% 
-pandas-0.25.3        | 9.6 MB    | #          |  11% 
-pandas-0.25.3        | 9.6 MB    | #2         |  12% 
-pandas-0.25.3        | 9.6 MB    | #3         |  13% 
-pandas-0.25.3        | 9.6 MB    | #5         |  16% 
-pandas-0.25.3        | 9.6 MB    | #7         |  17% 
-pandas-0.25.3        | 9.6 MB    | #8         |  18% 
-pandas-0.25.3        | 9.6 MB    | #9         |  20% 
-pandas-0.25.3        | 9.6 MB    | ##1        |  21% 
-pandas-0.25.3        | 9.6 MB    | ##2        |  23% 
-pandas-0.25.3        | 9.6 MB    | ##4        |  24% 
-pandas-0.25.3        | 9.6 MB    | ##5        |  26% 
-pandas-0.25.3        | 9.6 MB    | ##6        |  27% 
-pandas-0.25.3        | 9.6 MB    | ##8        |  28% 
-pandas-0.25.3        | 9.6 MB    | ##9        |  29% 
-pandas-0.25.3        | 9.6 MB    | ###        |  31% 
-pandas-0.25.3        | 9.6 MB    | ###2       |  32% 
-pandas-0.25.3        | 9.6 MB    | ###3       |  34% 
-pandas-0.25.3        | 9.6 MB    | ###4       |  35% 
-pandas-0.25.3        | 9.6 MB    | ###5       |  36% 
-pandas-0.25.3        | 9.6 MB    | ###7       |  37% 
-pandas-0.25.3        | 9.6 MB    | ###8       |  38% 
-pandas-0.25.3        | 9.6 MB    | ####       |  40% 
-pandas-0.25.3        | 9.6 MB    | ####1      |  41% 
-pandas-0.25.3        | 9.6 MB    | ####2      |  42% 
-pandas-0.25.3        | 9.6 MB    | ####3      |  44% 
-pandas-0.25.3        | 9.6 MB    | ####5      |  46% 
-pandas-0.25.3        | 9.6 MB    | ####6      |  47% 
-pandas-0.25.3        | 9.6 MB    | ####8      |  48% 
-pandas-0.25.3        | 9.6 MB    | ####9      |  50% 
-pandas-0.25.3        | 9.6 MB    | #####1     |  51% 
-pandas-0.25.3        | 9.6 MB    | #####2     |  52% 
-pandas-0.25.3        | 9.6 MB    | #####3     |  54% 
-pandas-0.25.3        | 9.6 MB    | #####4     |  55% 
-pandas-0.25.3        | 9.6 MB    | #####6     |  56% 
-pandas-0.25.3        | 9.6 MB    | #####7     |  58% 
-pandas-0.25.3        | 9.6 MB    | #####9     |  60% 
-pandas-0.25.3        | 9.6 MB    | ######     |  61% 
-pandas-0.25.3        | 9.6 MB    | ######2    |  62% 
-pandas-0.25.3        | 9.6 MB    | ######3    |  63% 
-pandas-0.25.3        | 9.6 MB    | ######4    |  65% 
-pandas-0.25.3        | 9.6 MB    | ######5    |  66% 
-pandas-0.25.3        | 9.6 MB    | ######7    |  67% 
-pandas-0.25.3        | 9.6 MB    | ######8    |  68% 
-pandas-0.25.3        | 9.6 MB    | #######    |  70% 
-pandas-0.25.3        | 9.6 MB    | #######1   |  71% 
-pandas-0.25.3        | 9.6 MB    | #######2   |  73% 
-pandas-0.25.3        | 9.6 MB    | #######4   |  75% 
-pandas-0.25.3        | 9.6 MB    | #######6   |  76% 
-pandas-0.25.3        | 9.6 MB    | #######7   |  78% 
-pandas-0.25.3        | 9.6 MB    | #######8   |  79% 
-pandas-0.25.3        | 9.6 MB    | ########   |  81% 
-pandas-0.25.3        | 9.6 MB    | ########1  |  82% 
-pandas-0.25.3        | 9.6 MB    | ########3  |  83% 
-pandas-0.25.3        | 9.6 MB    | ########4  |  85% 
-pandas-0.25.3        | 9.6 MB    | ########5  |  86% 
-pandas-0.25.3        | 9.6 MB    | ########7  |  87% 
-pandas-0.25.3        | 9.6 MB    | ########8  |  89% 
-pandas-0.25.3        | 9.6 MB    | ########9  |  90% 
-pandas-0.25.3        | 9.6 MB    | #########2 |  92% 
-pandas-0.25.3        | 9.6 MB    | #########3 |  94% 
-pandas-0.25.3        | 9.6 MB    | #########5 |  95% 
-pandas-0.25.3        | 9.6 MB    | #########6 |  97% 
-pandas-0.25.3        | 9.6 MB    | #########8 |  98% 
-pandas-0.25.3        | 9.6 MB    | #########9 | 100% 
-pandas-0.25.3        | 9.6 MB    | ########## | 100% 
-
-pytz-2021.3          | 242 KB    |            |   0% 
-pytz-2021.3          | 242 KB    | 6          |   7% 
-pytz-2021.3          | 242 KB    | #####2     |  53% 
-pytz-2021.3          | 242 KB    | ########5  |  86% 
-pytz-2021.3          | 242 KB    | ########## | 100% 
-
-six-1.16.0           | 14 KB     |            |   0% 
-six-1.16.0           | 14 KB     | ########## | 100% 
-six-1.16.0           | 14 KB     | ########## | 100% 
-Preparing transaction: ...working... done
-Verifying transaction: ...working... done
-Executing transaction: ...working... done</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5pcmlzX3NldG9zYS5oZWFkKClcblxuYGBgIn0= -->
-<pre class="python"><code>iris_setosa.head()
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5yZXRpY3VsYXRlOjpyZXBsX3B5dGhvbigpXG5gYGAifQ== -->
+<pre class="python"><code>reticulate::repl_python()</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUHl0aG9uIDMuNi4xMyAoQzovVXNlcnMvaGR0YWgvQXBwRGF0YS9Mb2NhbC9yLW1pbmljb25kYS9lbnZzL3ItcmV0aWN1bGF0ZS9weXRob24uZXhlKVxuUmV0aWN1bGF0ZSAxLjIyIFJFUEwgLS0gQSBQeXRob24gaW50ZXJwcmV0ZXIgaW4gUi5cbkVudGVyICdleGl0JyBvciAncXVpdCcgdG8gZXhpdCB0aGUgUkVQTCBhbmQgcmV0dXJuIHRvIFIuXG4ifQ== -->
+<pre><code>Python 3.6.13 (C:/Users/hdtah/AppData/Local/r-miniconda/envs/r-reticulate/python.exe)
+Reticulate 1.22 REPL -- A Python interpreter in R.
+Enter &#39;exit&#39; or &#39;quit&#39; to exit the REPL and return to R.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgcHl0aG9uXG5pbXBvcnQgcGFuZGFzXG5cbmlyaXNfcGFuZGFzID0gcGFuZGFzLnJlYWRfY3N2KFwiaXJpcy50eHRcIilcbmlyaXNfc2V0b3NhID0gaXJpc19wYW5kYXNbaXJpc19wYW5kYXNbJ3NwZWNpZXMnXSA9PSBcInNldG9zYVwiXVxuaXJpc19zZXRvc2EuaGVhZCgpXG5gYGAifQ== -->
+<pre class="python"><code>import pandas
+
+iris_pandas = pandas.read_csv(&quot;iris.txt&quot;)
+iris_setosa = iris_pandas[iris_pandas[&#39;species&#39;] == &quot;setosa&quot;]
+iris_setosa.head()</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiICAgc2VwYWxfbGVuZ3RoICBzZXBhbF93aWR0aCAgcGV0YWxfbGVuZ3RoICBwZXRhbF93aWR0aCBzcGVjaWVzXG4wICAgICAgICAgICA1LjEgICAgICAgICAgMy41ICAgICAgICAgICAxLjQgICAgICAgICAgMC4yICBzZXRvc2FcbjEgICAgICAgICAgIDQuOSAgICAgICAgICAzLjAgICAgICAgICAgIDEuNCAgICAgICAgICAwLjIgIHNldG9zYVxuMiAgICAgICAgICAgNC43ICAgICAgICAgIDMuMiAgICAgICAgICAgMS4zICAgICAgICAgIDAuMiAgc2V0b3NhXG4zICAgICAgICAgICA0LjYgICAgICAgICAgMy4xICAgICAgICAgICAxLjUgICAgICAgICAgMC4yICBzZXRvc2FcbjQgICAgICAgICAgIDUuMCAgICAgICAgICAzLjYgICAgICAgICAgIDEuNCAgICAgICAgICAwLjIgIHNldG9zYVxuIn0= -->
 <pre><code>   sepal_length  sepal_width  petal_length  petal_width species
@@ -611,8 +495,9 @@ Executing transaction: ...working... done</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnZ3Bsb3QyKVxubGlicmFyeShkcGx5cilcbmBgYCJ9 -->
-<pre class="r"><code>library(ggplot2)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucXVpdFxubGlicmFyeShnZ3Bsb3QyKVxubGlicmFyeShkcGx5cilcbmBgYCJ9 -->
+<pre class="r"><code>quit
+library(ggplot2)
 library(dplyr)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog46S847ixZHBseXLjpLzjuLJcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDjpLzjuLFwYWNrYWdlOnN0YXRz46S847iyOlxuXG4gICAgZmlsdGVyLCBsYWdcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDjpLzjuLFwYWNrYWdlOmJhc2XjpLzjuLI6XG5cbiAgICBpbnRlcnNlY3QsIHNldGRpZmYsIHNldGVxdWFsLCB1bmlvblxuIn0= -->
@@ -642,18 +527,20 @@ The following objects are masked from 㤼㸱package:base㤼㸲:
 <h1>SQL</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGJjb24gPC0gZGJDb25uZWN0KE15U1FMKCksXG4gICAgICAgICAgICAgICAgICAgaG9zdCA9ICdteXNxbGV4YW1wbGVzLWluc3RhbmNlLTEuY29jbHUwZnh4ZXhtLnVzLWVhc3QtMS5yZHMuYW1hem9uYXdzLmNvbScsXG4gICAgICAgICAgICAgICAgICAgdXNlciA9ICd1Zm1fc3R1ZGVudCcsXG4gICAgICAgICAgICAgICAgICAgcGFzc3dvcmQgPSAneVEyem52JyxcbiAgICAgICAgICAgICAgICAgICBkYm5hbWUgPSAnZGF0YXNldHMnKVxuXG5gYGAifQ== -->
-<pre class="r"><code>dbcon &lt;- dbConnect(MySQL(),
-                   host = &#39;mysqlexamples-instance-1.coclu0fxxexm.us-east-1.rds.amazonaws.com&#39;,
-                   user = &#39;ufm_student&#39;,
-                   password = &#39;yQ2znv&#39;,
-                   dbname = &#39;datasets&#39;)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShSTXlTUUwpXG5gYGAifQ== -->
+<pre class="r"><code>library(RMySQL)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gLmxvY2FsKGRydiwgLi4uKSA6IFxuICBGYWlsZWQgdG8gY29ubmVjdCB0byBkYXRhYmFzZTogRXJyb3I6IFVua25vd24gTXlTUUwgc2VydmVyIGhvc3QgJ215c3FsZXhhbXBsZXMtaW5zdGFuY2UtMS5jb2NsdTBmeHhleG0udXMtZWFzdC0xLnJkcy5hbWF6b25hd3MuY29tJyAoMTEwMDEpXG4ifQ== -->
-<pre><code>Error in .local(drv, ...) : 
-  Failed to connect to database: Error: Unknown MySQL server host &#39;mysqlexamples-instance-1.coclu0fxxexm.us-east-1.rds.amazonaws.com&#39; (11001)</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoicGFja2FnZSDjpLzjuLFSTXlTUUzjpLzjuLIgd2FzIGJ1aWx0IHVuZGVyIFIgdmVyc2lvbiA0LjAuNUxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogREJJXG5wYWNrYWdlIOOkvOO4sURCSeOkvOO4siB3YXMgYnVpbHQgdW5kZXIgUiB2ZXJzaW9uIDQuMC41XG4ifQ== -->
+<pre><code>package 㤼㸱RMySQL㤼㸲 was built under R version 4.0.5Loading required package: DBI
+package 㤼㸱DBI㤼㸲 was built under R version 4.0.5</code></pre>
 <!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGJjb24gPC0gZGJDb25uZWN0KE15U1FMKCksXG4gICAgICAgICAgICAgICAgICAgaG9zdCA9ICcxMjcuMC4wLjEnLFxuICAgICAgICAgICAgICAgICAgIHVzZXIgPSAncm9vdCcsXG4gICAgICAgICAgICAgICAgICAgcGFzc3dvcmQgPSAnRDVla3luZ3knLFxuICAgICAgICAgICAgICAgICAgIGRibmFtZSA9ICdhZ3Jvc2VydmljaW9kYicpXG5gYGAifQ== -->
+<pre class="r"><code>dbcon &lt;- dbConnect(MySQL(),
+                   host = &#39;127.0.0.1&#39;,
+                   user = &#39;root&#39;,
+                   password = &#39;D5ekyngy&#39;,
+                   dbname = &#39;agroserviciodb&#39;)</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -675,9 +562,8 @@ limit 10
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGJEaXNjb25uZWN0KGRiY29uKVxuXG5gYGAifQ== -->
-<pre class="r"><code>dbDisconnect(dbcon)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGJEaXNjb25uZWN0KGRiY29uKVxuYGBgIn0= -->
+<pre class="r"><code>dbDisconnect(dbcon)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
 <pre><code>[1] TRUE</code></pre>
